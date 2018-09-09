@@ -8,27 +8,233 @@
 </head>
 <body>
 <script>
-    var x = 10 + 5;
+    var ocv
+    var hosho = 11.3;
+    var shoki //計測値
+    var back = 0.012;
+    var mergin = 37;
+    var soc = prompt("LiバッテリSOC値を入力してください");  //入力
+    var temp = prompt("Liバッテリ温度を入力してください");  //入力
+    var hodenryoku = prompt("Li放電可能電電力を入力してください"); //入力
+
+
+    document.write("放電力は" + hodenryoku);
+    document.write("SOCは" + soc);
+    document.write("温度は" + temp);
+
+    document.write("soc/ 温度は" + (soc / temp));
+
+    // 初期リチウム放電抵抗値出力
+
+    // soc=20%の場合
+    if (soc === 20){
+        ocv = 11.95;
+        if (temp === -10 ) {
+            shoki = 15.69;
+        } else if (temp === 0) {
+            shoki = 9.46;
+        } else if (temp === 10) {
+            shoki = 7.11;
+        } else if (temp === 25) {
+            shoki = 4.97;
+        } else if (temp === 35) {
+            shoki = 3.46;
+        } else if (temp === 45) {
+            shoki = 3.02;
+        } else if (temp === 55) {
+            shoki = 2.68;
+        } else {
+          alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=30%の場合
+    else if (soc === 30){
+        ocv = 12.10;
+        if (temp === -10 ) {
+            shoki = 12.15;
+        } else if (temp === 0) {
+            shoki = 8.19;
+        } else if (temp === 10) {
+            shoki = 5.68;
+        } else if (temp === 25) {
+            shoki = 3.97;
+        } else if (temp === 35) {
+            shoki = 3.34;
+        } else if (temp === 45) {
+            shoki = 2.68;
+        } else if (temp === 55) {
+            shoki = 2.33;
+        } else {
+            alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=40%の場合
+    else if (soc === 40){
+        ocv = 12.20;
+        if (temp === -10 ) {
+            shoki = 11.55;
+        } else if (temp === 0) {
+            shoki = 7.30;
+        } else if (temp === 10) {
+            shoki = 5.07;
+        } else if (temp === 25) {
+            shoki = 3.84;
+        } else if (temp === 35) {
+            shoki = 2.82;
+        } else if (temp === 45) {
+            shoki = 2.35;
+        } else if (temp === 55) {
+            shoki = 2.12;
+        } else {
+            alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=50%の場合
+    else if (soc === 50){
+        ocv = 12.33;
+        if (temp === -10 ) {
+            shoki = 10.98;
+        } else if (temp === 0) {
+            shoki = 6.82;
+        } else if (temp === 10) {
+            shoki = 4.75;
+        } else if (temp === 25) {
+            shoki = 3.64;
+        } else if (temp === 35) {
+            shoki = 2.66;
+        } else if (temp === 45) {
+            shoki = 2.25;
+        } else if (temp === 55) {
+            shoki = 2.02;
+        } else {
+            alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=60%の場合
+    else if (soc === 60){
+        ocv = 12.48;
+        if (temp === -10 ) {
+            shoki = 10.24;
+        } else if (temp === 0) {
+            shoki = 6.40;
+        } else if (temp === 10) {
+            shoki = 4.67;
+        } else if (temp === 25) {
+            shoki = 3.32;
+        } else if (temp === 35) {
+            shoki = 2.48;
+        } else if (temp === 45) {
+            shoki = 2.14;
+        } else if (temp === 55) {
+            shoki = 1.94;
+        } else {
+            alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=70%の場合
+    else if (soc === 70){
+        ocv = 12.64;
+        if (temp === -10 ) {
+            shoki = 10.24;
+        } else if (temp === 0) {
+            shoki = 6.40;
+        } else if (temp === 10) {
+            shoki = 4.67;
+        } else if (temp === 25) {
+            shoki = 3.32;
+        } else if (temp === 35) {
+            shoki = 2.48;
+        } else if (temp === 45) {
+            shoki = 2.14;
+        } else if (temp === 55) {
+            shoki = 1.94;
+        } else {
+            alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=80の場合
+    else if (soc >= 80){
+        ocv = 12.80;
+        if (temp === -10 ) {
+            shoki = 10.24;
+        } else if (temp === 0) {
+            shoki = 6.40;
+        } else if (temp === 10) {
+            shoki = 4.67;
+        } else if (temp === 25) {
+            shoki = 3.32;
+        } else if (temp === 35) {
+            shoki = 2.48;
+        } else if (temp === 45) {
+            shoki = 2.14;
+        } else if (temp === 55) {
+            shoki = 1.94;
+        } else {
+            alert("温度に正しい値が入力されていません");
+        }
+    }
+    // soc=80を上回る場合
+    else if (soc > 80){
+        ocv = 12.86;
+        if (temp === -10 ) {
+            shoki = 10.24;
+        } else if (temp === 0) {
+            shoki = 6.40;
+        } else if (temp === 10) {
+            shoki = 4.67;
+        } else if (temp === 25) {
+            shoki = 3.32;
+        } else if (temp === 35) {
+            shoki = 2.48;
+        } else if (temp === 45) {
+            shoki = 2.14;
+        } else if (temp === 55) {
+            shoki = 1.94;
+        } else {
+            dalert("温度に正しい値が入力されていません");
+        }
+    }
+    // socそれ以外
+    else {
+        alert("LiバッテリSOC値に正しい値が入力されていません");
+    }
+
+    var bunbo1 = hodenryoku + mergin;
+    var bunbo2 = (shoki / 100) + back ;
+
+    var bunshi = (ocv - hosho) * 2;
+    var bunbo = bunbo1 * bunbo2;
+
+    var rekka = bunshi / bunbo;
+
+    document.write("LiバッテリSOC値は{ " + soc + " } %")
+    document.write("Liバッテリ温度は{ " + temp + " } ℃");
+    document.write("Li放電可能電電力は{ " + hodenryoku + " } W");
+
+    document.write("劣化係数は{ " + rekka + " } ");
+
+
 
 </script>
 <div class="container">
     <header>
         <div id="logo">
-            <p class="font">計算サイト</p>
+            <p class="font"></p>
         </div>
         <div id="headline">
-            <h1>電池劣化を確認します。</h1>
+            <h1>電池劣化係数の表示</h1>
+            <p>
+                <script type="text/javascript" language="javascript">
+                    document.write("LiバッテリSOC値は{ " + soc + " } %");
+                </script>
+            </p>
         </div>
     </header>
 </div>
 
 <div class="container">
     <div id="main">
-        <h2>計算します</h2>
-        <form action="" method="post">
-            <input type="number" name="soc" value="">
-            <input type="submit" value="送信"><input type="reset" value="リセット">
-        </form>
+        <h2></h2>
     </div>
 </div>
 </body>
